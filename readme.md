@@ -7,5 +7,5 @@ Credit where credit is due, after a lot of digging I believe [this]() is the ori
 #### Installation
 
 ```bash
-npm install react-confetti
+tk
 ```
