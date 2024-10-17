@@ -1,0 +1,43 @@
+.confettiScreen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  perspective: 800px;
+  transform: translateZ(0);
+  z-index: 1;
+}
+
+.confetti {
+  position: absolute;
+  bottom: 105%;
+  left: var(--posX);
+  animation: fall var(--speed, 5s) cubic-bezier(0.45, 0, 0.55, 1) infinite var(--delay, 0s);
+}
+
+.confettiContent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  animation: flip calc(var(--speed) / 5) linear alternate-reverse infinite;
+  
+  backface-visibility: visible;
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(var(--posXDirection, 0), calc(100vh + 500px), 0) rotate(calc(var(--rotate, 0deg) * 2));
+  }
+}
+
+@keyframes flip {
+  to {
+    transform: rotate(calc(var(--rotate) * -0.5)) rotateY(-360deg);
+  }
+}
