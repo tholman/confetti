@@ -35,8 +35,11 @@ styleInject(css_248z);
 
 // src/CoolConfetti.tsx
 function CoolConfetti(_a) {
-    var _b = _a.total, total = _b === void 0 ? 100 : _b, Component = _a.Component;
+    var _b = _a.total, total = _b === void 0 ? 10 : _b, Component = _a.Component;
     var confettiItems = [];
+    React.useEffect(function () {
+        console.log("hi");
+    }, [total]);
     for (var i = 0; i < total; i++) {
         var posX = "".concat(Math.floor(Math.random() * 100), "%");
         var delay = "".concat((Math.random() * 5).toFixed(2), "s");
