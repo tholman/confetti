@@ -1,5 +1,7 @@
+/* WIP as I develop the Component */
+
 import React from "react";
-import styles from "./style.module.css";
+import "./styles.css";
 
 export default function Confetti({
   total = 1000,
@@ -33,11 +35,11 @@ export default function Confetti({
       : Component;
 
     confettiItems.push(
-      <div key={i} className={styles.confetti} style={style}>
-        <span className={styles.confettiContent}>{componentContent}</span>
+      <div key={i} className={'confetti'} style={style}>
+        <span className={'confettiContent'}>{componentContent}</span>
       </div>
     );
   }
 
-  return <div className={styles.confettiScreen}>{confettiItems}</div>;
+  return <div className={'confettiScreen'}>{confettiItems}</div>;
 }
