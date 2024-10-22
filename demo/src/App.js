@@ -23,17 +23,17 @@ export default function Demo() {
             See the documentation for full usage ↠
           </a>
         </p>
-        <Confetti total={5} Component={<div className="w-3 h-2" style={{ background: "red" }} />} />
+        <Confetti total={10} Component={<div className="w-3 h-2" style={{ background: "#333" }} />} />
       </div>
       <div className={"confettiContainer one"}>
         <Confetti
-          total={10}
+          total={30}
           Component={<div className="w-3 h-2" style={{ background: "red" }} />}
         />
       </div>
       <div className={"confettiContainer two"}>
         <Confetti
-          total={30}
+          total={40}
           Component={<div className="w-3 h-2" style={{ background: "white" }} />}
         />
       </div>

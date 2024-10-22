@@ -16,6 +16,11 @@ code {
   display: flex;
 }
 
+a {
+  color: #f8f9ff;
+  text-decoration: none;
+}
+
 .documentation {
   font-family: "Inter", sans-serif;
   width: 40%;
