@@ -44,14 +44,27 @@ a {
 }
 
 .code {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 50, 0.2);
   padding: 5px 10px;
   border-radius: 7px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(220, 220, 255, 0.2);
+  font-size: 15px;
 }
 
 .darkIcon {
   color:rgb(23 31 42);
+}
+
+.controls {
+  position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    color: white;
 }
 
 .icon {

@@ -28,14 +28,24 @@ export default function Demo() {
       <div className={"confettiContainer one"}>
         <Confetti
           total={30}
-          Component={<div className="w-3 h-2" style={{ background: "red" }} />}
+          Component={[<div className="w-3 h-2" style={{ background: "red" }} />, <div className="w-3 h-3" style={{ background: "red", borderRadius: "50%" }} />]}
         />
+        <div className="controls">
+          <code className="code">
+            {'Custom Shapes'}
+          </code>
+        </div>
       </div>
       <div className={"confettiContainer two"}>
         <Confetti
           total={40}
           Component={<div className="w-3 h-2" style={{ background: "white" }} />}
         />
+        <div className="controls">
+          <code className="code">
+          {'Custom Colors'}
+          </code>
+        </div>
       </div>
       <div className={"confettiContainer three"}>
         <Confetti
@@ -45,6 +55,11 @@ export default function Demo() {
             <div className="w-2 h-3" style={{ background: "rgb(25 115 238)" }} />,
           ]}
         />
+        <div className="controls">
+          <code className="code">
+          {'Hot Swap & More'}
+          </code>
+        </div>
       </div>
     </div>
   )
