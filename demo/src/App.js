@@ -28,11 +28,11 @@ export default function Demo() {
       <div className={"confettiContainer one"}>
         <Confetti
           total={30}
-          Component={[<div className="w-3 h-2" style={{ background: "red" }} />, <div className="w-3 h-3" style={{ background: "red", borderRadius: "50%" }} />]}
+          Component={[<div className="w-3 h-2" style={{ background: "red" }} />, <div className="w-3 h-3" style={{ background: "#8B0000", borderRadius: "50%" }} />]}
         />
         <div className="controls">
           <code className="code">
-            {'Custom Shapes'}
+            {'Customize Shapes or Use your own Components'}
           </code>
         </div>
       </div>
@@ -43,7 +43,7 @@ export default function Demo() {
         />
         <div className="controls">
           <code className="code">
-          {'Custom Colors'}
+          {'Have as much confetti as you want'}
           </code>
         </div>
       </div>
@@ -57,7 +57,7 @@ export default function Demo() {
         />
         <div className="controls">
           <code className="code">
-          {'Hot Swap & More'}
+          {'Hot Swap Confetti mid fall'}
           </code>
         </div>
       </div>
