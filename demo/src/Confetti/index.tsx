@@ -4,7 +4,7 @@ import React from "react";
 import "./styles.css";
 
 export default function Confetti({
-  total = 1000,
+  total = 90,
   Component,
 }: {
   total: number;
