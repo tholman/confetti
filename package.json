@@ -1,7 +1,7 @@
 {
   "name": "confetti",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.8.0",
+  "description": "React Confetti",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/types/CoolConfetti.d.ts",
