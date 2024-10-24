@@ -1,5 +1,5 @@
 {
-  "name": "confetti",
+  "name": "@tholman/confetti",
   "version": "0.8.0",
   "description": "React Confetti",
   "main": "dist/index.cjs.js",

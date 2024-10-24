@@ -29,37 +29,37 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = ".style-module_confettiScreen__nFcKI{bottom:0;left:0;overflow:hidden;perspective:800px;pointer-events:none;position:absolute;right:0;top:0;transform:translateZ(0);z-index:1}.style-module_confetti__tdzoz{animation:style-module_fall__CfJe- var(--speed,5s) cubic-bezier(.45,0,.55,1) infinite var(--delay,0s);bottom:105%;left:var(--posX);position:absolute}.style-module_confettiContent__SkjXj{animation:style-module_flip__00HTp calc(var(--speed)/5) linear alternate-reverse infinite;backface-visibility:visible;bottom:0;left:0;position:absolute;right:0;top:0;transform-style:preserve-3d}@keyframes style-module_fall__CfJe-{to{transform:translate3d(var(--posXDirection,0),calc(100vh + 500px),0) rotate(calc(var(--rotate, 0deg)*2))}}@keyframes style-module_flip__00HTp{to{transform:rotate(calc(var(--rotate)*-.5)) rotateY(-1turn)}}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLm1vZHVsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsb0NBSUUsUUFBUyxDQUNULE1BQU8sQ0FDUCxlQUFnQixDQUVoQixpQkFBa0IsQ0FEbEIsbUJBQW9CLENBTnBCLGlCQUFrQixDQUVsQixPQUFRLENBRFIsS0FBTSxDQU9OLHVCQUF3QixDQUN4QixTQUNGLENBRUEsOEJBSUUscUdBQXlGLENBRnpGLFdBQVksQ0FDWixnQkFBaUIsQ0FGakIsaUJBSUYsQ0FFQSxxQ0FPRSx5RkFBd0UsQ0FFeEUsMkJBQTRCLENBTDVCLFFBQVMsQ0FDVCxNQUFPLENBSlAsaUJBQWtCLENBRWxCLE9BQVEsQ0FEUixLQUFNLENBSU4sMkJBSUYsQ0FFQSxvQ0FDRSxHQUNFLHVHQUNGLENBQ0YsQ0FFQSxvQ0FDRSxHQUNFLHlEQUNGLENBQ0YiLCJmaWxlIjoic3R5bGUubW9kdWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb25mZXR0aVNjcmVlbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwO1xuICByaWdodDogMDtcbiAgYm90dG9tOiAwO1xuICBsZWZ0OiAwO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbiAgcGVyc3BlY3RpdmU6IDgwMHB4O1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVooMCk7XG4gIHotaW5kZXg6IDE7XG59XG5cbi5jb25mZXR0aSB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgYm90dG9tOiAxMDUlO1xuICBsZWZ0OiB2YXIoLS1wb3NYKTtcbiAgYW5pbWF0aW9uOiBmYWxsIHZhcigtLXNwZWVkLCA1cykgY3ViaWMtYmV6aWVyKDAuNDUsIDAsIDAuNTUsIDEpIGluZmluaXRlIHZhcigtLWRlbGF5LCAwcyk7XG59XG5cbi5jb25mZXR0aUNvbnRlbnQge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgdHJhbnNmb3JtLXN0eWxlOiBwcmVzZXJ2ZS0zZDtcbiAgYW5pbWF0aW9uOiBmbGlwIGNhbGModmFyKC0tc3BlZWQpIC8gNSkgbGluZWFyIGFsdGVybmF0ZS1yZXZlcnNlIGluZmluaXRlO1xuICBcbiAgYmFja2ZhY2UtdmlzaWJpbGl0eTogdmlzaWJsZTtcbn1cblxuQGtleWZyYW1lcyBmYWxsIHtcbiAgdG8ge1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlM2QodmFyKC0tcG9zWERpcmVjdGlvbiwgMCksIGNhbGMoMTAwdmggKyA1MDBweCksIDApIHJvdGF0ZShjYWxjKHZhcigtLXJvdGF0ZSwgMGRlZykgKiAyKSk7XG4gIH1cbn1cblxuQGtleWZyYW1lcyBmbGlwIHtcbiAgdG8ge1xuICAgIHRyYW5zZm9ybTogcm90YXRlKGNhbGModmFyKC0tcm90YXRlKSAqIC0wLjUpKSByb3RhdGVZKC0zNjBkZWcpO1xuICB9XG59XG4iXX0= */";
+var css_248z = ".style-module_confettiScreen__nFcKI{bottom:0;left:0;overflow:hidden;perspective:800px;pointer-events:none;position:absolute;right:0;top:0;transform:translateZ(0);z-index:1}.style-module_confetti__tdzoz{animation:var(--speed) style-module_fall__CfJe- cubic-bezier(.45,0,.55,1) infinite var(--delay);bottom:105%;left:var(--posX);position:absolute;transform:scale(var(--size))}.style-module_confettiContent__SkjXj{animation:style-module_flip__00HTp calc(var(--speed)/4) linear alternate-reverse infinite;animation-delay:var(--delay);backface-visibility:visible;bottom:0;left:0;position:absolute;right:0;top:0;transform-style:preserve-3d}@keyframes style-module_fall__CfJe-{to{transform:translate3d(var(--posXDirection),calc(100% + 80px),0) rotate(calc(var(--rotate)*2))}}@keyframes style-module_flip__00HTp{to{transform:rotate(calc(var(--rotate)*-.5)) rotateY(-1turn)}}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLm1vZHVsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsb0NBSUUsUUFBUyxDQUNULE1BQU8sQ0FDUCxlQUFnQixDQUVoQixpQkFBa0IsQ0FEbEIsbUJBQW9CLENBTnBCLGlCQUFrQixDQUVsQixPQUFRLENBRFIsS0FBTSxDQU9OLHVCQUF3QixDQUN4QixTQUNGLENBRUEsOEJBSUUsK0ZBQWlGLENBRmpGLFdBQVksQ0FDWixnQkFBaUIsQ0FGakIsaUJBQWtCLENBSWxCLDRCQUNGLENBRUEscUNBT0UseUZBQXdFLENBQ3hFLDRCQUE2QixDQUM3QiwyQkFBNEIsQ0FMNUIsUUFBUyxDQUNULE1BQU8sQ0FKUCxpQkFBa0IsQ0FFbEIsT0FBUSxDQURSLEtBQU0sQ0FJTiwyQkFJRixDQUVBLG9DQUNFLEdBQ0UsNkZBQ0YsQ0FDRixDQUVBLG9DQUNFLEdBQ0UseURBQ0YsQ0FDRiIsImZpbGUiOiJzdHlsZS5tb2R1bGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbmZldHRpU2NyZWVuIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDA7XG4gIHJpZ2h0OiAwO1xuICBib3R0b206IDA7XG4gIGxlZnQ6IDA7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xuICBwZXJzcGVjdGl2ZTogODAwcHg7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWigwKTtcbiAgei1pbmRleDogMTtcbn1cblxuLmNvbmZldHRpIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBib3R0b206IDEwNSU7XG4gIGxlZnQ6IHZhcigtLXBvc1gpO1xuICBhbmltYXRpb246IHZhcigtLXNwZWVkKSBmYWxsIGN1YmljLWJlemllcigwLjQ1LCAwLCAwLjU1LCAxKSBpbmZpbml0ZSB2YXIoLS1kZWxheSk7XG4gIHRyYW5zZm9ybTogc2NhbGUodmFyKC0tc2l6ZSkpO1xufVxuXG4uY29uZmV0dGlDb250ZW50IHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDA7XG4gIHJpZ2h0OiAwO1xuICBib3R0b206IDA7XG4gIGxlZnQ6IDA7XG4gIHRyYW5zZm9ybS1zdHlsZTogcHJlc2VydmUtM2Q7XG4gIGFuaW1hdGlvbjogZmxpcCBjYWxjKHZhcigtLXNwZWVkKSAvIDQpIGxpbmVhciBhbHRlcm5hdGUtcmV2ZXJzZSBpbmZpbml0ZTtcbiAgYW5pbWF0aW9uLWRlbGF5OiB2YXIoLS1kZWxheSk7XG4gIGJhY2tmYWNlLXZpc2liaWxpdHk6IHZpc2libGU7XG59XG5cbkBrZXlmcmFtZXMgZmFsbCB7XG4gIHRvIHtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZTNkKHZhcigtLXBvc1hEaXJlY3Rpb24pLCBjYWxjKDEwMCUgKyA4MHB4KSwgMCkgcm90YXRlKGNhbGModmFyKC0tcm90YXRlKSAqIDIpKTtcbiAgfVxufVxuXG5Aa2V5ZnJhbWVzIGZsaXAge1xuICB0byB7XG4gICAgdHJhbnNmb3JtOiByb3RhdGUoY2FsYyh2YXIoLS1yb3RhdGUpICogLTAuNSkpIHJvdGF0ZVkoLTM2MGRlZyk7XG4gIH1cbn1cbiJdfQ== */";
 var styles = {"confettiScreen":"style-module_confettiScreen__nFcKI","confetti":"style-module_confetti__tdzoz","fall":"style-module_fall__CfJe-","confettiContent":"style-module_confettiContent__SkjXj","flip":"style-module_flip__00HTp"};
 styleInject(css_248z);
 
-// src/CoolConfetti.tsx
-function CoolConfetti(_a) {
-    var _b = _a.total, total = _b === void 0 ? 10 : _b, Component = _a.Component;
+function Confetti(_a) {
+    var _b = _a.total, total = _b === void 0 ? 90 : _b, Component = _a.Component;
     var confettiItems = [];
-    React.useEffect(function () {
-        console.log("hi");
-    }, [total]);
     for (var i = 0; i < total; i++) {
         var posX = "".concat(Math.floor(Math.random() * 100), "%");
         var delay = "".concat((Math.random() * 5).toFixed(2), "s");
-        var speed = "".concat((4 + Math.random() * 2).toFixed(2), "s");
+        var speed = "".concat((3 + Math.random() * 2).toFixed(2), "s");
         var posXDirection = "".concat(((Math.random() - 0.5) * 800).toFixed(0), "%");
         var size = (1 + Math.random() * 0.2).toFixed(2);
         var rotate = "".concat(Math.floor(Math.random() * 360) - 180, "deg");
         var style = {
-            '--posX': posX,
-            '--delay': delay,
-            '--speed': speed,
-            '--posXDirection': posXDirection,
-            '--size': size,
-            '--rotate': rotate,
+            "--posX": posX,
+            "--delay": delay,
+            "--speed": speed,
+            "--posXDirection": posXDirection,
+            "--size": size,
+            "--rotate": rotate,
         };
+        // If Component is an array, pick a random one, otherwise use the single component
+        var componentContent = Array.isArray(Component)
+            ? Component[i % Component.length]
+            : Component;
         confettiItems.push(React.createElement("div", { key: i, className: styles.confetti, style: style },
-            React.createElement("span", { className: styles.confettiContent }, Component)));
+            React.createElement("span", { className: styles.confettiContent }, componentContent)));
     }
     return React.createElement("div", { className: styles.confettiScreen }, confettiItems);
 }
 
-module.exports = CoolConfetti;
+module.exports = Confetti;
 //# sourceMappingURL=index.cjs.js.map
