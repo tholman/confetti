@@ -19,14 +19,18 @@ yarn add @tholman/confetti
 Import in your react component, and apply generously.
 
 ```javascript
-import Confetti, { Rectangle } from '@tholman/confetti';
+import Confetti from '@tholman/confetti';
 ```
 
 ```javascript
-<Confetti total={99} Component={<Rectangle color="#333" />} />
+<Confetti total={99} />
 ```
 
-You can also pass in an array of components to create a more varied effect.
+You can also pass in an array of components to create a more controlled effect. There are a couple of base shapes provided.
+
+```javascript
+import Confetti, { Rectangle, Circle } from '@tholman/confetti';
+```
 
 ```javascript
 <Confetti total={99} Component={[
@@ -37,8 +41,11 @@ You can also pass in an array of components to create a more varied effect.
 
 #### Customization
 
-We provide you with a couple of base confetti shapes, but you can also pass in your own components for more variety.
+The library provides you with a couple of base confetti shapes, but you can also pass in your own components for more variety.
 
 ```javascript
 <Confetti total={99} Component={<YourComponent />} />
 ```
+
+#### License
+MIT

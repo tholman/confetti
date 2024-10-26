@@ -1,22 +1,22 @@
 import React from "react"
 import styles from "./style.module.css"
 
-function Confetti({
+function ConfettiScreen({
   total = 90,
   Component,
 }: {
-  total: number;
-  Component: React.ReactNode | React.ReactNode[];
+  total: number
+  Component: React.ReactNode | React.ReactNode[]
 }) {
-  const confettiItems = [];
+  const confettiItems = []
 
   for (let i = 0; i < total; i++) {
-    const posX = `${Math.floor(Math.random() * 100)}%`;
-    const delay = `${(Math.random() * 5).toFixed(2)}s`;
-    const speed = `${(3 + Math.random() * 2).toFixed(2)}s`;
-    const posXDirection = `${((Math.random() - 0.5) * 800).toFixed(0)}%`;
-    const size = (1 + Math.random() * 0.2).toFixed(2);
-    const rotate = `${Math.floor(Math.random() * 360) - 180}deg`;
+    const posX = `${Math.floor(Math.random() * 100)}%`
+    const delay = `${(Math.random() * 5).toFixed(2)}s`
+    const speed = `${(3 + Math.random() * 2).toFixed(2)}s`
+    const posXDirection = `${((Math.random() - 0.5) * 800).toFixed(0)}%`
+    const size = (1 + Math.random() * 0.2).toFixed(2)
+    const rotate = `${Math.floor(Math.random() * 360) - 180}deg`
 
     const style = {
       "--posX": posX,
@@ -25,12 +25,9 @@ function Confetti({
       "--posXDirection": posXDirection,
       "--size": size,
       "--rotate": rotate,
-    } as React.CSSProperties;
+    } as React.CSSProperties
 
-    // If Component is an array, pick a random one, otherwise use the single component
-    const componentContent = Array.isArray(Component)
-      ? Component[i % Component.length]
-      : Component;
+    const componentContent = Array.isArray(Component) ? Component[i % Component.length] : Component
 
     confettiItems.push(
       <div key={i} className={styles.confetti} style={style}>
@@ -43,8 +40,8 @@ function Confetti({
 }
 
 export function Rectangle({ color }: { color: string }) {
-  const width = Math.floor(6 + Math.random() * 6);
-  const height = Math.floor(6 + Math.random() * 6);
+  const width = Math.floor(6 + Math.random() * 6)
+  const height = Math.floor(6 + Math.random() * 6)
   return (
     <div
       style={{
@@ -53,24 +50,41 @@ export function Rectangle({ color }: { color: string }) {
         backgroundColor: color,
       }}
     />
-  );
+  )
 }
 
 export function Circle({ color }: { color: string }) {
-  
-  const size = Math.floor(6 + Math.random() * 6);
+  const size = Math.floor(6 + Math.random() * 6)
 
   return (
     <div
       style={{
         width: `${size}px`,
         height: `${size}px`,
-        borderRadius: '50%',
+        borderRadius: "50%",
         backgroundColor: color,
       }}
     />
-  );
+  )
 }
 
-export { Confetti };
-export default Confetti;
+function Confetti(props: { total: number; Component?: React.ReactNode | React.ReactNode[] }) {
+  const colors = ["#ff595e", "#ffca3a", "#8ac926", "#1982c4", "#6a4c93"]
+
+  if (props.Component) {
+    return <ConfettiScreen total={props.total} Component={props.Component} />
+  }
+
+  const availableComponents = [Rectangle, Circle]
+
+  const defaultComponents = Array.from({ length: props.total }, () => {
+    const RandomComponent = availableComponents[Math.floor(Math.random() * availableComponents.length)]
+    const randomColor = colors[Math.floor(Math.random() * colors.length)]
+    return <RandomComponent color={randomColor} />
+  })
+
+  return <ConfettiScreen total={props.total} Component={defaultComponents} />
+}
+
+export { Confetti }
+export default Confetti

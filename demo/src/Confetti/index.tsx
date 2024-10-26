@@ -3,7 +3,7 @@
 import React from "react";
 import "./styles.css";
 
-function Confetti({
+function ConfettiScreen({
   total = 90,
   Component,
 }: {
@@ -45,8 +45,8 @@ function Confetti({
 }
 
 export function Rectangle({ color }: { color: string }) {
-  const width = Math.floor(8 + Math.random() * 6);
-  const height = Math.floor(8 + Math.random() * 6);
+  const width = Math.floor(6 + Math.random() * 6)
+  const height = Math.floor(6 + Math.random() * 6)
   return (
     <div
       style={{
@@ -55,23 +55,41 @@ export function Rectangle({ color }: { color: string }) {
         backgroundColor: color,
       }}
     />
-  );
+  )
 }
 
 export function Circle({ color }: { color: string }) {
-  
-  const size = Math.floor(8 + Math.random() * 4);
+  const size = Math.floor(6 + Math.random() * 6)
 
   return (
     <div
       style={{
         width: `${size}px`,
         height: `${size}px`,
-        borderRadius: '50%',
+        borderRadius: "50%",
         backgroundColor: color,
       }}
     />
-  );
+  )
 }
-export { Confetti };
-export default Confetti;
+
+function Confetti(props: { total: number; Component?: React.ReactNode | React.ReactNode[] }) {
+  const colors = ["#ff595e", "#ffca3a", "#8ac926", "#1982c4", "#6a4c93"]
+
+  if (props.Component) {
+    return <ConfettiScreen total={props.total} Component={props.Component} />
+  }
+
+  const availableComponents = [Rectangle, Circle]
+
+  const defaultComponents = Array.from({ length: props.total }, () => {
+    const RandomComponent = availableComponents[Math.floor(Math.random() * availableComponents.length)]
+    const randomColor = colors[Math.floor(Math.random() * colors.length)]
+    return <RandomComponent color={randomColor} />
+  })
+
+  return <ConfettiScreen total={props.total} Component={defaultComponents} />
+}
+
+export { Confetti }
+export default Confetti

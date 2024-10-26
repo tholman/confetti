@@ -15,8 +15,11 @@ export default function Demo() {
         <p className="mt-5">
           <code className={"code"}>npm install @tholman/confetti</code>
         </p>
+        <p>
+          <code className={"code"}>{`import Confetti from '@tholman/confetti';`}</code>
+        </p>
         <p className="mt-5">
-          <code className={"code"}>{`<Confetti total={10} />`}</code>
+          <code className={"code"}>{`<Confetti total={99} />`}</code>
         </p>
         <p className="mt-6">
           <a className="italic" href="https://github.com/tholman/confetti">
@@ -33,22 +36,22 @@ export default function Demo() {
             <Circle color="#8B0000" />,
           ]}
         />
-        <div className="controls">
+        {/* <div className="controls">
           <code className="code">
             {'Customize Shapes or Use your own Components'}
           </code>
-        </div>
+        </div> */}
       </div>
       <div className={"confettiContainer two"}>
         <Confetti
           total={40}
           Component={<Rectangle color="white" />}
         />
-        <div className="controls">
+        {/* <div className="controls">
           <code className="code">
           {'Have as much confetti as you want'}
           </code>
-        </div>
+        </div> */}
       </div>
       <div className={"confettiContainer three"}>
         <Confetti
@@ -58,11 +61,11 @@ export default function Demo() {
             <Circle color="rgb(25 115 238)" />,
           ]}
         />
-        <div className="controls">
+        {/* <div className="controls">
           <code className="code">
           {'Hot Swap Confetti mid fall'}
           </code>
-        </div>
+        </div> */}
       </div>
     </div>
   )
