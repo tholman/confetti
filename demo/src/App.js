@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import Confetti, { Rectangle, Circle } from "./Confetti/index.tsx"
+import Confetti, { Rectangle, Circle } from "@tholman/confetti"
 
 export default function Demo() {
   return (

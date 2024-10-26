@@ -27,7 +27,6 @@
   left: 0;
   transform-style: preserve-3d;
   animation: flip calc(var(--speed) / 4) linear alternate-reverse infinite;
-  animation-delay: var(--delay);
   backface-visibility: visible;
 }
 
