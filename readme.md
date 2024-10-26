@@ -48,4 +48,4 @@ The library provides you with a couple of base confetti shapes, but you can also
 ```
 
 #### License
-MIT
+ISC

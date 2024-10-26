@@ -1,6 +1,6 @@
 {
   "name": "@tholman/confetti",
-  "version": "0.9.3",
+  "version": "1.0.0",
   "description": "React Confetti",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -16,8 +16,8 @@
   "author": "",
   "license": "ISC",
   "peerDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.8",
