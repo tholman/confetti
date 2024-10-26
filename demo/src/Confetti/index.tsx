@@ -17,10 +17,12 @@ function ConfettiScreen({
       if (containerRef.current) {
         const height = containerRef.current.offsetHeight;
         containerRef.current.style.setProperty('--containerHeight', `${height}px`);
+
+        setTimeout(() => {
+          containerRef.current?.style.setProperty('--containerHeight', `${height + 1}px`);
+        }, 1000);
       }
     };
-
-    updateHeight(); // Initial height set
 
     const resizeObserver = new ResizeObserver(updateHeight);
     if (containerRef.current) {
@@ -38,8 +40,8 @@ function ConfettiScreen({
 
   for (let i = 0; i < total; i++) {
     const posX = `${Math.floor(Math.random() * 100)}%`;
-    const delay = `${(Math.random() * 5).toFixed(2)}s`;
     const speed = `${(3 + Math.random() * 2).toFixed(2)}s`;
+    const delay = `${(Math.random() * 3).toFixed(2)}s`;
     const posXDirection = `${((Math.random() - 0.5) * 800).toFixed(0)}%`;
     const size = (1 + Math.random() * 0.2).toFixed(2);
     const rotate = `${Math.floor(Math.random() * 360) - 180}deg`;

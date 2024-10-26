@@ -1,3 +1,5 @@
+
+
 .confettiScreen {
   position: absolute;
   top: 0;
@@ -8,16 +10,21 @@
   pointer-events: none;
   perspective: 800px;
   transform: translateZ(0);
-  z-index: 1;
+  --containerheight: var(--containerheight, 100vh);
 }
 
 .confetti {
   position: absolute;
   bottom: 105%;
   left: var(--posX);
-  animation: var(--speed) fall cubic-bezier(0.45, 0, 0.55, 1) infinite var(--delay);
+  animation-duration: var(--speed);
+  animation-name: fall;
+  animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+  animation-iteration-count: infinite;
+  animation-delay: var(--delay);
   transform: scale(var(--size));
-}
+  will-change: animation;
+  z-index: 2;}
 
 .confettiContent {
   position: absolute;
@@ -27,13 +34,12 @@
   left: 0;
   transform-style: preserve-3d;
   animation: flip calc(var(--speed) / 4) linear alternate-reverse infinite;
-  animation-delay: var(--delay);
   backface-visibility: visible;
 }
 
 @keyframes fall {
   to {
-    transform: translate3d(var(--posXDirection), calc(var(--containerHeight) + 80px), 0) rotate(calc(var(--rotate) * 2));
+    transform: translate3d(var(--posXDirection), calc(var(--containerHeight, 100vh) + calc(var(--containerHeight, 100vh) * 0.1)), 0) rotate(calc(var(--rotate) * 2));
   }
 }
 

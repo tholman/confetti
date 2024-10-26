@@ -33,7 +33,12 @@
 
 @keyframes fall {
   to {
-    transform: translate3d(var(--posXDirection), calc(var(--containerHeight) + 80px), 0) rotate(calc(var(--rotate) * 2));
+    transform: translate3d(
+        var(--posXDirection),
+        calc(var(--containerHeight, 100vh) + calc(var(--containerHeight, 100vh) * 0.1)),
+        0
+      )
+      rotate(calc(var(--rotate) * 2));
   }
 }
 

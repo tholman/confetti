@@ -14,7 +14,7 @@ function ConfettiScreen({
     const updateHeight = () => {
       if (containerRef.current) {
         const height = containerRef.current.offsetHeight
-        containerRef.current.style.setProperty("--containerHeight", `${height}px`)
+        containerRef.current.style.setProperty("--containerheight", `${height}px`)
       }
     }
 
