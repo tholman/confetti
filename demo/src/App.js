@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import Confetti from "./Confetti/index.tsx"
+import Confetti, { Rectangle, Circle } from "./Confetti/index.tsx"
 
 export default function Demo() {
   return (
@@ -23,12 +23,15 @@ export default function Demo() {
             See the documentation for full usage ↠
           </a>
         </p>
-        <Confetti total={10} Component={<div className="w-3 h-2" style={{ background: "#333" }} />} />
+        <Confetti total={10} Component={<Rectangle color="#333" />} />
       </div>
       <div className={"confettiContainer one"}>
         <Confetti
           total={30}
-          Component={[<div className="w-3 h-2" style={{ background: "red" }} />, <div className="w-3 h-3" style={{ background: "#8B0000", borderRadius: "50%" }} />]}
+          Component={[
+            <Rectangle color="red" />,
+            <Circle color="#8B0000" />,
+          ]}
         />
         <div className="controls">
           <code className="code">
@@ -39,7 +42,7 @@ export default function Demo() {
       <div className={"confettiContainer two"}>
         <Confetti
           total={40}
-          Component={<div className="w-3 h-2" style={{ background: "white" }} />}
+          Component={<Rectangle color="white" />}
         />
         <div className="controls">
           <code className="code">
@@ -51,8 +54,8 @@ export default function Demo() {
         <Confetti
           total={70}
           Component={[
-            <div className="w-3 h-2" style={{ background: "red" }} />,
-            <div className="w-2 h-3" style={{ background: "rgb(25 115 238)" }} />,
+            <Rectangle color="red" />,
+            <Circle color="rgb(25 115 238)" />,
           ]}
         />
         <div className="controls">

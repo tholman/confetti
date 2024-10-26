@@ -3,7 +3,7 @@
 import React from "react";
 import "./styles.css";
 
-export default function Confetti({
+function Confetti({
   total = 90,
   Component,
 }: {
@@ -43,3 +43,35 @@ export default function Confetti({
 
   return <div className={'confettiScreen'}>{confettiItems}</div>;
 }
+
+export function Rectangle({ color }: { color: string }) {
+  const width = Math.floor(8 + Math.random() * 6);
+  const height = Math.floor(8 + Math.random() * 6);
+  return (
+    <div
+      style={{
+        width: `${width}px`,
+        height: `${height}px`,
+        backgroundColor: color,
+      }}
+    />
+  );
+}
+
+export function Circle({ color }: { color: string }) {
+  
+  const size = Math.floor(8 + Math.random() * 4);
+
+  return (
+    <div
+      style={{
+        width: `${size}px`,
+        height: `${size}px`,
+        borderRadius: '50%',
+        backgroundColor: color,
+      }}
+    />
+  );
+}
+export { Confetti };
+export default Confetti;
