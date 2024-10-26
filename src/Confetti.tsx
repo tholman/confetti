@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import styles from "./style.module.css"
 
 function ConfettiScreen({
@@ -8,6 +8,30 @@ function ConfettiScreen({
   total: number
   Component: React.ReactNode | React.ReactNode[]
 }) {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const updateHeight = () => {
+      if (containerRef.current) {
+        const height = containerRef.current.offsetHeight
+        containerRef.current.style.setProperty("--containerHeight", `${height}px`)
+      }
+    }
+
+    updateHeight()
+
+    const resizeObserver = new ResizeObserver(updateHeight)
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current)
+    }
+
+    return () => {
+      if (containerRef.current) {
+        resizeObserver.unobserve(containerRef.current)
+      }
+    }
+  }, [])
+
   const confettiItems = []
 
   for (let i = 0; i < total; i++) {
@@ -36,7 +60,11 @@ function ConfettiScreen({
     )
   }
 
-  return <div className={styles.confettiScreen}>{confettiItems}</div>
+  return (
+    <div ref={containerRef} className={styles.confettiScreen}>
+      {confettiItems}
+    </div>
+  )
 }
 
 export function Rectangle({ color }: { color: string }) {
@@ -78,7 +106,8 @@ function Confetti(props: { total: number; Component?: React.ReactNode | React.Re
   const availableComponents = [Rectangle, Circle]
 
   const defaultComponents = Array.from({ length: props.total }, () => {
-    const RandomComponent = availableComponents[Math.floor(Math.random() * availableComponents.length)]
+    const RandomComponent =
+      availableComponents[Math.floor(Math.random() * availableComponents.length)]
     const randomColor = colors[Math.floor(Math.random() * colors.length)]
     return <RandomComponent color={randomColor} />
   })

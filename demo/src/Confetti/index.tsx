@@ -1,6 +1,6 @@
 /* WIP as I develop the Component */
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./styles.css";
 
 function ConfettiScreen({
@@ -10,6 +10,30 @@ function ConfettiScreen({
   total: number;
   Component: React.ReactNode | React.ReactNode[];
 }) {
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const updateHeight = () => {
+      if (containerRef.current) {
+        const height = containerRef.current.offsetHeight;
+        containerRef.current.style.setProperty('--containerHeight', `${height}px`);
+      }
+    };
+
+    updateHeight(); // Initial height set
+
+    const resizeObserver = new ResizeObserver(updateHeight);
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        resizeObserver.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   const confettiItems = [];
 
   for (let i = 0; i < total; i++) {
@@ -41,7 +65,14 @@ function ConfettiScreen({
     );
   }
 
-  return <div className={'confettiScreen'}>{confettiItems}</div>;
+  return (
+    <div 
+      ref={containerRef} 
+      className={'confettiScreen'} 
+    >
+      {confettiItems}
+    </div>
+  )
 }
 
 export function Rectangle({ color }: { color: string }) {
