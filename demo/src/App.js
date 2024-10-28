@@ -12,13 +12,13 @@ export default function Demo() {
           A simple, customizable React component to help you add a dash of surprise and delight to
           your site.
         </p>
-        <p className="mt-5">
+        <p className="mt-5 codewrapper">
           <code className={"code"}>npm install @tholman/confetti</code>
         </p>
-        <p>
+        <p className="codewrapper">
           <code className={"code"}>{`import Confetti from '@tholman/confetti';`}</code>
         </p>
-        <p className="mt-5">
+        <p className="mt-5 codewrapper">
           <code className={"code"}>{`<Confetti total={99} />`}</code>
         </p>
         <p className="mt-6">

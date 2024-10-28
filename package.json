@@ -1,6 +1,6 @@
 {
   "name": "@tholman/confetti",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Confetti",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -20,14 +20,14 @@
     "react-dom": ">=18.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.8",
-    "@babel/preset-react": "^7.25.7",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
     "@rollup/plugin-babel": "^6.0.4",
-    "@types/react": "^18.3.11",
+    "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
-    "rollup": "^4.24.0",
+    "rollup": "^4.24.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.36.0",
