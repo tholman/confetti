@@ -52,6 +52,7 @@ a {
   border: 2px solid rgba(255, 255, 255, 0.2);
   padding: 8px 12px;
   position: relative;
+  white-space: nowrap;
 }
 
 .darkIcon {
@@ -139,7 +140,7 @@ a {
 
   .documentation {
     width: 100%;
-    padding: 40px;
+    padding: 30px;
     box-sizing: border-box;
   }
 

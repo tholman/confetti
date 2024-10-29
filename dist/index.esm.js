@@ -1,5 +1,50 @@
 import React, { useRef, useEffect } from 'react';
 
+/******************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+/* global Reflect, Promise, SuppressedError, Symbol, Iterator */
+
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
+typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
+    var e = new Error(message);
+    return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+};
+
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
   var insertAt = ref.insertAt;
@@ -32,7 +77,7 @@ var styles = {"confettiScreen":"style-module_confettiScreen__nFcKI","confetti":"
 styleInject(css_248z);
 
 function ConfettiScreen(_a) {
-    var _b = _a.total, total = _b === void 0 ? 90 : _b, Component = _a.Component;
+    var total = _a.total, Component = _a.Component, props = __rest(_a, ["total", "Component"]);
     var containerRef = useRef(null);
     useEffect(function () {
         var updateHeight = function () {
@@ -60,7 +105,7 @@ function ConfettiScreen(_a) {
         var posXDirection = "".concat(((Math.random() - 0.5) * 800).toFixed(0), "%");
         var size = (1 + Math.random() * 0.2).toFixed(2);
         var rotate = "".concat(Math.floor(Math.random() * 360) - 180, "deg");
-        var style = {
+        var inlineStyles = {
             "--posX": posX,
             "--delay": delay,
             "--speed": speed,
@@ -69,10 +114,10 @@ function ConfettiScreen(_a) {
             "--rotate": rotate,
         };
         var componentContent = Array.isArray(Component) ? Component[i % Component.length] : Component;
-        confettiItems.push(React.createElement("div", { key: i, className: styles.confetti, style: style },
+        confettiItems.push(React.createElement("div", { key: i, className: styles.confetti, style: inlineStyles },
             React.createElement("span", { className: styles.confettiContent }, componentContent)));
     }
-    return (React.createElement("div", { ref: containerRef, className: styles.confettiScreen }, confettiItems));
+    return (React.createElement("div", __assign({ ref: containerRef, className: styles.confettiScreen }, props), confettiItems));
 }
 function Rectangle(_a) {
     var color = _a.color;
@@ -94,18 +139,19 @@ function Circle(_a) {
             backgroundColor: color,
         } }));
 }
-function Confetti(props) {
+function Confetti(_a) {
+    var _b = _a.total, total = _b === void 0 ? 90 : _b, Component = _a.Component, props = __rest(_a, ["total", "Component"]);
     var colors = ["#ff595e", "#ffca3a", "#8ac926", "#1982c4", "#6a4c93"];
-    if (props.Component) {
-        return React.createElement(ConfettiScreen, { total: props.total, Component: props.Component });
+    if (Component) {
+        return React.createElement(ConfettiScreen, __assign({ total: total, Component: Component }, props));
     }
     var availableComponents = [Rectangle, Circle];
-    var defaultComponents = Array.from({ length: props.total }, function () {
+    var defaultComponents = Array.from({ length: total }, function () {
         var RandomComponent = availableComponents[Math.floor(Math.random() * availableComponents.length)];
         var randomColor = colors[Math.floor(Math.random() * colors.length)];
         return React.createElement(RandomComponent, { color: randomColor });
     });
-    return React.createElement(ConfettiScreen, { total: props.total, Component: defaultComponents });
+    return React.createElement(ConfettiScreen, __assign({ total: total, Component: defaultComponents }, props));
 }
 
 export { Circle, Confetti, Rectangle, Confetti as default };
