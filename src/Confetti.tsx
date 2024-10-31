@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, CSSProperties, HTMLAttributes } from "react"
+import React, { useEffect, useRef, CSSProperties, HTMLAttributes, useState } from "react"
 import styles from "./style.module.css"
 
 interface ConfettiScreenProps extends HTMLAttributes<HTMLDivElement> {
@@ -8,6 +8,7 @@ interface ConfettiScreenProps extends HTMLAttributes<HTMLDivElement> {
 
 function ConfettiScreen({ total, Component, ...props }: ConfettiScreenProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const [confettiItems, setConfettiItems] = useState<React.ReactNode[]>([])
 
   useEffect(() => {
     const updateHeight = () => {
@@ -31,33 +32,39 @@ function ConfettiScreen({ total, Component, ...props }: ConfettiScreenProps) {
     }
   }, [])
 
-  const confettiItems = []
+  useEffect(() => {
+    const items = []
 
-  for (let i = 0; i < total; i++) {
-    const posX = `${Math.floor(Math.random() * 100)}%`
-    const delay = `${(Math.random() * 5).toFixed(2)}s`
-    const speed = `${(3 + Math.random() * 2).toFixed(2)}s`
-    const posXDirection = `${((Math.random() - 0.5) * 800).toFixed(0)}%`
-    const size = (1 + Math.random() * 0.2).toFixed(2)
-    const rotate = `${Math.floor(Math.random() * 360) - 180}deg`
+    for (let i = 0; i < total; i++) {
+      const posX = `${Math.floor(Math.random() * 100)}%`
+      const delay = `${(Math.random() * 5).toFixed(2)}s`
+      const speed = `${(3 + Math.random() * 2).toFixed(2)}s`
+      const posXDirection = `${((Math.random() - 0.5) * 800).toFixed(0)}%`
+      const size = (1 + Math.random() * 0.2).toFixed(2)
+      const rotate = `${Math.floor(Math.random() * 360) - 180}deg`
 
-    const inlineStyles = {
-      "--posX": posX,
-      "--delay": delay,
-      "--speed": speed,
-      "--posXDirection": posXDirection,
-      "--size": size,
-      "--rotate": rotate,
-    } as CSSProperties
+      const inlineStyles = {
+        "--posX": posX,
+        "--delay": delay,
+        "--speed": speed,
+        "--posXDirection": posXDirection,
+        "--size": size,
+        "--rotate": rotate,
+      } as CSSProperties
 
-    const componentContent = Array.isArray(Component) ? Component[i % Component.length] : Component
+      const componentContent = Array.isArray(Component)
+        ? Component[i % Component.length]
+        : Component
 
-    confettiItems.push(
-      <div key={i} className={styles.confetti} style={inlineStyles}>
-        <span className={styles.confettiContent}>{componentContent}</span>
-      </div>
-    )
-  }
+      items.push(
+        <div key={i} className={styles.confetti} style={inlineStyles}>
+          <span className={styles.confettiContent}>{componentContent}</span>
+        </div>
+      )
+    }
+
+    setConfettiItems(items)
+  }, [total, Component])
 
   return (
     <div ref={containerRef} className={styles.confettiScreen} {...props}>
