@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -79,6 +79,7 @@ styleInject(css_248z);
 function ConfettiScreen(_a) {
     var total = _a.total, Component = _a.Component, props = __rest(_a, ["total", "Component"]);
     var containerRef = useRef(null);
+    var _b = useState([]), confettiItems = _b[0], setConfettiItems = _b[1];
     useEffect(function () {
         var updateHeight = function () {
             if (containerRef.current) {
@@ -97,26 +98,31 @@ function ConfettiScreen(_a) {
             }
         };
     }, []);
-    var confettiItems = [];
-    for (var i = 0; i < total; i++) {
-        var posX = "".concat(Math.floor(Math.random() * 100), "%");
-        var delay = "".concat((Math.random() * 5).toFixed(2), "s");
-        var speed = "".concat((3 + Math.random() * 2).toFixed(2), "s");
-        var posXDirection = "".concat(((Math.random() - 0.5) * 800).toFixed(0), "%");
-        var size = (1 + Math.random() * 0.2).toFixed(2);
-        var rotate = "".concat(Math.floor(Math.random() * 360) - 180, "deg");
-        var inlineStyles = {
-            "--posX": posX,
-            "--delay": delay,
-            "--speed": speed,
-            "--posXDirection": posXDirection,
-            "--size": size,
-            "--rotate": rotate,
-        };
-        var componentContent = Array.isArray(Component) ? Component[i % Component.length] : Component;
-        confettiItems.push(React.createElement("div", { key: i, className: styles.confetti, style: inlineStyles },
-            React.createElement("span", { className: styles.confettiContent }, componentContent)));
-    }
+    useEffect(function () {
+        var items = [];
+        for (var i = 0; i < total; i++) {
+            var posX = "".concat(Math.floor(Math.random() * 100), "%");
+            var delay = "".concat((Math.random() * 5).toFixed(2), "s");
+            var speed = "".concat((3 + Math.random() * 2).toFixed(2), "s");
+            var posXDirection = "".concat(((Math.random() - 0.5) * 800).toFixed(0), "%");
+            var size = (1 + Math.random() * 0.2).toFixed(2);
+            var rotate = "".concat(Math.floor(Math.random() * 360) - 180, "deg");
+            var inlineStyles = {
+                "--posX": posX,
+                "--delay": delay,
+                "--speed": speed,
+                "--posXDirection": posXDirection,
+                "--size": size,
+                "--rotate": rotate,
+            };
+            var componentContent = Array.isArray(Component)
+                ? Component[i % Component.length]
+                : Component;
+            items.push(React.createElement("div", { key: i, className: styles.confetti, style: inlineStyles },
+                React.createElement("span", { className: styles.confettiContent }, componentContent)));
+        }
+        setConfettiItems(items);
+    }, [total, Component]);
     return (React.createElement("div", __assign({ ref: containerRef, className: styles.confettiScreen }, props), confettiItems));
 }
 function Rectangle(_a) {
