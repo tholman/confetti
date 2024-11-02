@@ -18,6 +18,7 @@ export default function Demo() {
 
       // Random offset for each animation
       const randomDelay = Math.random() * -2
+      const randomDuration = Math.ceil(Math.random() * 5) + 5
 
       rect.style.stroke = "url(#border-gradient)"
       rect.style.strokeWidth = "2"
@@ -29,14 +30,17 @@ export default function Demo() {
       const styleSheet = document.createElement("style")
       styleSheet.textContent = `
         @keyframes ${styleName} {
-          to {
+          0% {
+            stroke-dashoffset: ${perimeter};
+          }
+          100% {
             stroke-dashoffset: 0;
           }
         }
       `
       document.head.appendChild(styleSheet)
 
-      rect.style.animation = `${styleName} 8s linear forwards infinite`
+      rect.style.animation = `${styleName} ${randomDuration}s linear infinite`
       rect.style.animationDelay = `${randomDelay}s`
 
       // Add hover handlers
@@ -88,11 +92,11 @@ export default function Demo() {
             >
               <defs>
                 <linearGradient id="border-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#1488fc" stopOpacity="0" />
+                  <stop offset="0%" stopColor="#1488fc" stopOpacity="0.1" />
                   <stop offset="20%" stopColor="#1488fc" stopOpacity="0.4" />
                   <stop offset="50%" stopColor="#1488fc" stopOpacity="0.6" />
                   <stop offset="80%" stopColor="#1488fc" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="#1488fc" stopOpacity="0" />
+                  <stop offset="100%" stopColor="#1488fc" stopOpacity="0.1" />
                 </linearGradient>
               </defs>
               <rect
@@ -119,11 +123,11 @@ export default function Demo() {
             >
               <defs>
                 <linearGradient id="border-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#1488fc" stopOpacity="0" />
+                  <stop offset="0%" stopColor="#1488fc" stopOpacity="0.3" />
                   <stop offset="20%" stopColor="#1488fc" stopOpacity="0.4" />
                   <stop offset="50%" stopColor="#1488fc" stopOpacity="0.6" />
                   <stop offset="80%" stopColor="#1488fc" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="#1488fc" stopOpacity="0" />
+                  <stop offset="100%" stopColor="#1488fc" stopOpacity="0.3" />
                 </linearGradient>
               </defs>
               <rect
@@ -150,11 +154,11 @@ export default function Demo() {
             >
               <defs>
                 <linearGradient id="border-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#1488fc" stopOpacity="0" />
+                  <stop offset="0%" stopColor="#1488fc" stopOpacity="0.3" />
                   <stop offset="20%" stopColor="#1488fc" stopOpacity="0.4" />
                   <stop offset="50%" stopColor="#1488fc" stopOpacity="0.6" />
                   <stop offset="80%" stopColor="#1488fc" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="#1488fc" stopOpacity="0" />
+                  <stop offset="100%" stopColor="#1488fc" stopOpacity="0.3" />
                 </linearGradient>
               </defs>
               <rect

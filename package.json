@@ -1,6 +1,6 @@
 {
   "name": "@tholman/confetti",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React Confetti",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -27,7 +27,7 @@
     "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
-    "rollup": "^4.24.2",
+    "rollup": "^4.24.3",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.36.0",

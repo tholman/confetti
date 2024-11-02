@@ -102,6 +102,22 @@ export function Circle({ color }: { color: string }) {
   )
 }
 
+export function Triangle({ color }: { color: string }) {
+  const size = Math.floor(8 + Math.random() * 6)
+  
+  return (
+    <div
+      style={{
+        width: 0,
+        height: 0,
+        borderLeft: `${size/2}px solid transparent`,
+        borderRight: `${size/2}px solid transparent`,
+        borderBottom: `${size}px solid ${color}`,
+      }}
+    />
+  )
+}
+
 interface ConfettiProps extends HTMLAttributes<HTMLDivElement> {
   total?: number
   Component?: React.ReactNode | React.ReactNode[]
@@ -114,7 +130,7 @@ function Confetti({ total = 90, Component, ...props }: ConfettiProps) {
     return <ConfettiScreen total={total} Component={Component} {...props} />
   }
 
-  const availableComponents = [Rectangle, Circle]
+  const availableComponents = [Rectangle, Circle, Triangle]
 
   const defaultComponents = Array.from({ length: total }, () => {
     const RandomComponent =

@@ -13,7 +13,7 @@
 
 .confetti {
   position: absolute;
-  bottom: 105%;
+  bottom: calc(105% + 10px);
   left: var(--posX);
   animation: var(--speed) fall cubic-bezier(0.45, 0, 0.55, 1) infinite var(--delay);
   transform: scale(var(--size));
