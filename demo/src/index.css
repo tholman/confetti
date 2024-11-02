@@ -170,6 +170,10 @@ a {
     flex-direction: column;
   }
 
+  .hidable {
+    display: none;
+  }
+
   .documentation {
     width: 100%;
     padding: 30px;

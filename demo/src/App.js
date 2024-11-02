@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useRef } from "react"
-import Confetti, { Rectangle, Circle } from "@tholman/confetti"
+import Confetti, { Rectangle, Circle, Triangle } from "@tholman/confetti"
 
 export default function Demo() {
   const borderRefs = useRef([])
@@ -12,6 +12,13 @@ export default function Demo() {
 
     currentRefs.forEach((rect, index) => {
       if (!rect) return
+
+      // Check if the element or its container is hidden
+      const wrapper = rect.closest(".code-border")
+      const isHidden = wrapper?.closest('.hidable')?.offsetParent === null
+
+      // Skip if element is hidden
+      if (isHidden) return
 
       const perimeter = rect.getTotalLength()
       const dashLength = Math.floor(Math.random() * (120 - 70 + 1)) + 70
@@ -112,7 +119,7 @@ export default function Demo() {
             npm install @tholman/confetti
           </code>
         </div>
-        <div className="codewrapper">
+        <div className="codewrapper hidable">
           <code className={"code"}>
             {" "}
             <svg
@@ -143,7 +150,7 @@ export default function Demo() {
             {`import Confetti from '@tholman/confetti';`}
           </code>
         </div>
-        <div className="mt-5 codewrapper">
+        <div className="mt-5 codewrapper hidable">
           <code className={"code"}>
             {" "}
             <svg
@@ -179,10 +186,10 @@ export default function Demo() {
             See the documentation for full usage ↠
           </a>
         </p>
-        <Confetti total={10} Component={<Rectangle color="#333" />} />
+        <Confetti total={10} Component={<Triangle color="#333" />} />
       </div>
       <div className={"confettiContainer one"}>
-        <Confetti total={30} Component={[<Rectangle color="red" />, <Circle color="#8B0000" />]} />
+        <Confetti total={20} Component={[<Triangle color="#8B0000" />, <Rectangle color="red" />, <Circle color="#8B0000" />]} />
         {/* <div className="controls">
           <code className="code">
             {'Customize Shapes or Use your own Components'}
@@ -190,7 +197,7 @@ export default function Demo() {
         </div> */}
       </div>
       <div className={"confettiContainer two"}>
-        <Confetti total={40} Component={<Rectangle color="white" />} />
+        <Confetti total={30} Component={<Rectangle color="white" />} />
         {/* <div className="controls">
           <code className="code">
           {'Have as much confetti as you want'}
@@ -199,7 +206,7 @@ export default function Demo() {
       </div>
       <div className={"confettiContainer three"}>
         <Confetti
-          total={70}
+          total={50}
           Component={[<Rectangle color="red" />, <Circle color="rgb(25 115 238)" />]}
         />
         {/* <div className="controls">
