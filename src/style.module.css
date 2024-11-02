@@ -41,7 +41,7 @@
   to {
     transform: translate3d(
         var(--posXDirection),
-        calc(var(--containerHeight, 100vh) + calc(var(--containerHeight, 100vh) * 0.1)),
+        calc(var(--containerheight, 100vh) + 40px),
         0
       )
       rotate(calc(var(--rotate) * 2));
