@@ -31,14 +31,21 @@ import Confetti from '@tholman/confetti';
 You can also pass in an array of components to create a more controlled effect. There are a couple of base shapes provided.
 
 ```javascript
-import Confetti, { Rectangle, Circle } from '@tholman/confetti';
+import Confetti, { Rectangle, Circle, Triangle } from '@tholman/confetti';
 ```
 
 ```javascript
 <Confetti total={99} Component={[
   <Rectangle color="red" />,
   <Circle color="blue" />,
+  <Triangle color="green" />,
 ]} />
+```
+
+The containter itself is absolutely positioned, and will try to expand into the space you give it, but you can also control its css as you would any element.
+
+```javascript
+<Confetti total={99} className="custom-class" />
 ```
 
 #### Customization

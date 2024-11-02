@@ -5,6 +5,9 @@ export declare function Rectangle({ color }: {
 export declare function Circle({ color }: {
     color: string;
 }): React.JSX.Element;
+export declare function Triangle({ color }: {
+    color: string;
+}): React.JSX.Element;
 interface ConfettiProps extends HTMLAttributes<HTMLDivElement> {
     total?: number;
     Component?: React.ReactNode | React.ReactNode[];

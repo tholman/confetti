@@ -67,7 +67,11 @@ function ConfettiScreen({ total, Component, ...props }: ConfettiScreenProps) {
   }, [total, Component])
 
   return (
-    <div ref={containerRef} className={styles.confettiScreen} {...props}>
+    <div 
+      ref={containerRef} 
+      className={`${styles.confettiScreen} ${props.className || ''}`} 
+      {...props}
+    >
       {confettiItems}
     </div>
   )
