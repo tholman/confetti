@@ -34,14 +34,14 @@
   from {
     transform: translate3d(
       var(--posXDirection),
-      -10px,
+      -20px,
       0
     );
   }
   to {
     transform: translate3d(
         var(--posXDirection),
-        calc(var(--containerheight, 100vh) + 40px),
+        calc(var(--containerheight, 100vh) + 50px),
         0
       )
       rotate(calc(var(--rotate) * 2));

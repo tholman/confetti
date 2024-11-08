@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -146,6 +150,22 @@ a {
   stroke-dashoffset: 1000;
 }
 
+.word-confetti {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  background: white;
+  color: #111;
+  padding: 2px 4px;
+  border-radius: 12px;
+  border: 1px solid #111;
+  display: block;
+  position: relative;
+  width: fit-content;
+  letter-spacing: 1px;
+}
+
 @keyframes rotateGradient {
   0% {
     stroke-dashoffset: 400;
@@ -166,6 +186,11 @@ a {
 }
 
 @media (max-width: 768px) {
+
+  .documentation h1 {
+    font-size: 40px;
+  }
+
   .main {
     flex-direction: column;
   }
@@ -176,6 +201,7 @@ a {
 
   .documentation {
     width: 100%;
+    min-width: unset;
     padding: 30px;
     box-sizing: border-box;
   }
@@ -187,8 +213,8 @@ a {
 }
 
 .code-border {
-  transform: translateZ(0);  /* Force GPU acceleration */
-  backface-visibility: hidden;  /* Help with aliasing */
+  transform: translateZ(0); 
+  backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   border-radius: 8px;

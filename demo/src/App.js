@@ -186,7 +186,7 @@ export default function Demo() {
             See the documentation for full usage ↠
           </a>
         </p>
-        <Confetti total={10} Component={<Triangle color="#333" />} />
+        <Confetti total={10} Component={<Circle color="#333" />} />
       </div>
       <div className={"confettiContainer one"}>
         <Confetti total={20} Component={[<Triangle color="#8B0000" />, <Rectangle color="red" />, <Circle color="#8B0000" />]} />
