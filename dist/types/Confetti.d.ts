@@ -13,5 +13,8 @@ interface ConfettiProps extends HTMLAttributes<HTMLDivElement> {
     Component?: React.ReactNode | React.ReactNode[];
 }
 declare function Confetti({ total, Component, ...props }: ConfettiProps): React.JSX.Element;
+declare namespace Confetti {
+    var displayName: string;
+}
 export { Confetti };
 export default Confetti;

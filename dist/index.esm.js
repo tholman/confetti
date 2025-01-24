@@ -116,8 +116,8 @@ function ConfettiScreen(_a) {
                 "--rotate": rotate,
             };
             var componentContent = Array.isArray(Component)
-                ? Component[i % Component.length]
-                : Component;
+                ? React.cloneElement(Component[i % Component.length], { key: "component-".concat(i) })
+                : React.cloneElement(Component, { key: "component-".concat(i) });
             items.push(React.createElement("div", { key: i, className: styles.confetti, style: inlineStyles },
                 React.createElement("span", { className: styles.confettiContent }, componentContent)));
         }
@@ -163,13 +163,14 @@ function Confetti(_a) {
         return React.createElement(ConfettiScreen, __assign({ total: total, Component: Component }, props));
     }
     var availableComponents = [Rectangle, Circle, Triangle];
-    var defaultComponents = Array.from({ length: total }, function () {
+    var defaultComponents = Array.from({ length: total }, function (_, index) {
         var RandomComponent = availableComponents[Math.floor(Math.random() * availableComponents.length)];
         var randomColor = colors[Math.floor(Math.random() * colors.length)];
-        return React.createElement(RandomComponent, { color: randomColor });
+        return React.createElement(RandomComponent, { key: index, color: randomColor });
     });
     return React.createElement(ConfettiScreen, __assign({ total: total, Component: defaultComponents }, props));
 }
+Confetti.displayName = 'Confetti';
 
 export { Circle, Confetti, Rectangle, Triangle, Confetti as default };
 //# sourceMappingURL=index.esm.js.map
