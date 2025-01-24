@@ -53,8 +53,8 @@ function ConfettiScreen({ total, Component, ...props }: ConfettiScreenProps) {
       } as CSSProperties
 
       const componentContent = Array.isArray(Component)
-        ? Component[i % Component.length]
-        : Component
+        ? React.cloneElement(Component[i % Component.length] as React.ReactElement, { key: `component-${i}` })
+        : React.cloneElement(Component as React.ReactElement, { key: `component-${i}` })
 
       items.push(
         <div key={i} className={styles.confetti} style={inlineStyles}>
@@ -136,15 +136,17 @@ function Confetti({ total = 90, Component, ...props }: ConfettiProps) {
 
   const availableComponents = [Rectangle, Circle, Triangle]
 
-  const defaultComponents = Array.from({ length: total }, () => {
+  const defaultComponents = Array.from({ length: total }, (_, index) => {
     const RandomComponent =
       availableComponents[Math.floor(Math.random() * availableComponents.length)]
     const randomColor = colors[Math.floor(Math.random() * colors.length)]
-    return <RandomComponent color={randomColor} />
+    return <RandomComponent key={index} color={randomColor} />
   })
 
   return <ConfettiScreen total={total} Component={defaultComponents} {...props} />
 }
+
+Confetti.displayName = 'Confetti'
 
 export { Confetti }
 export default Confetti
