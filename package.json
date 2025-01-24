@@ -1,10 +1,10 @@
 {
   "name": "@tholman/confetti",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "React Confetti",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
-  "types": "dist/types/CoolConfetti.d.ts",
+  "types": "dist/types/Confetti.d.ts",
   "files": [
     "dist"
   ],
